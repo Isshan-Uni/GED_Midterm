@@ -7,9 +7,11 @@ The player attacks enemies to earn points, and defeated enemies fly upward befor
 <img width="1262" height="778" alt="Screenshot 2026-10-08 210918" src="https://github.com/user-attachments/assets/29048a10-5b89-4727-ad08-386ab52f83ca" />
 <img width="940" height="405" alt="Screenshot 2026-10-08 210948" src="https://github.com/user-attachments/assets/cf60b635-fabc-422c-99ad-be188ab5ea7e" />
 For the build you cannot see the attack area cause i did not have time, in the ue engine i am using the gizmo to show the attack area.
-\
-\
-\
+<br>
+<br>
+<br>
+<br>
+<br>
 # Gameplay Features:
 Enemy AI: Enemies use AI Move To to chase the player. The player loses if an enemy collides with them.
 Player Attack: Uses a Sphere Trace to detect nearby enemies when attacking.
@@ -21,6 +23,8 @@ High Score: Tracks the highest score achieved during the game session.
 Difficulty Scaling: At 40 points or higher, the Game Manager switches from slow enemy factories to fast enemy factories.
 Win/Lose Conditions: The player wins by reaching 200 points and loses if an enemy touches them.
 Win/Lose Menu: A separate level displays the result, final score, gameplay time, and high score.
+<br>
+<br>
 
 # Object-Oriented Programming (OOP):
 
@@ -34,7 +38,8 @@ I also used inheritance in my Factory system, where the slow and fast factories 
 <img width="236" height="134" alt="Screenshot 2026-10-08 210047" src="https://github.com/user-attachments/assets/9448f190-d5bb-4e80-a5e5-70997777d6fb" />
 <img width="242" height="134" alt="image" src="https://github.com/user-attachments/assets/a8f699d7-c134-4077-89e7-08855a5ed306" />
 
-
+<br>
+<br>
 # Polymorphism:
 I used polymorphism in both the enemy and factory systems.
 In BP_EnemyBase, I created a DoEffect event that is overridden by the child enemies. The player calls the same event through a BP_EnemyBase reference, but each child enemy performs a different action.
@@ -57,7 +62,8 @@ EnemyBase having DoEffect event which is empty each enemy child do there own eff
 <img width="940" height="358" alt="image" src="https://github.com/user-attachments/assets/bac5e4da-9a77-4e40-980d-4b4b23cef843" />
 
 
-
+<br>
+<br>
 
 # Encapsulation:
 I used encapsulation in BP_GI (Game Instance) to manage the player's score, gameplay time, high score, and win/lose state.
@@ -73,7 +79,8 @@ I chose this approach to keep the data management in one place and make it easie
 <img width="195" height="356" alt="Screenshot 2026-10-08 205407" src="https://github.com/user-attachments/assets/5bf879e5-9c76-46c1-8538-41b988aec174" />
 <img width="823" height="422" alt="Screenshot 2026-10-08 205732" src="https://github.com/user-attachments/assets/03ce45e3-b65a-42ec-83bf-1929386e112c" />
 
-
+<br>
+<br>
 
 
 # Singleton Pattern – Game Instance
@@ -105,7 +112,8 @@ Win condition and level transition:
 When the player meets the win condition, the Player Character calls SetBwon to update the win state in Game Instance before opening the Win_Lose_Menu level.
 The result UI then retrieves this value to determine whether the player won or lost.
 
-
+<br>
+<br>
 # Factory Pattern – Enemy Spawning
 
 I implemented the Factory pattern using a parent BP_EnemyFactory and separate child factories for slow and fast enemies.
@@ -126,13 +134,15 @@ We assign different value to the child factory and then it spawns that base enem
 
 <img width="960" height="391" alt="image" src="https://github.com/user-attachments/assets/625207e5-0231-461c-83fc-2058fec9c9fd" />
 Inside game manager it keeps spawning from the factory until we meet the score requirement.
-
+<br>
+<br>
 # What I Wanted to Implement
 I originally wanted to recreate Bubble Bobble's projectile mechanics more closely.
 My idea was to have the player shoot a bubble projectile that expands when it hits an enemy. The enemy would become attached to the bubble and float upward, and shooting the bubble again would destroy the enemy.
 I also wanted enemies to shoot projectiles at the player. For that, I was planning to use another Factory system to spawn different projectile types through the enemy base class.
 Due to the limited time during the midterm, I focused on completing the main gameplay and making sure the OOP, Singleton, and Factory implementations were functional.
 These are features I wanted to add if had more time.
-
+<br>
+<br>
 
 I used spawning system from my lab activity 1 which used to spawn powerups but now it spawns enemy. I used change color mechanics from old project from class activity 1.

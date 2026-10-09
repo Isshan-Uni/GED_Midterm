@@ -3,6 +3,7 @@ For this practical midterm, I was tasked with recreating the mechanics of Bubble
 
 The player attacks enemies to earn points, and defeated enemies fly upward before being destroyed. Enemies continuously spawn and chase the player. Once the player's score reaches 40, faster enemies begin spawning, increasing the difficulty. I also implemented a high-score system that keeps track of the highest score during the game session.
 
+
 <img width="1262" height="769" alt="Screenshot 2026-10-08 210910" src="https://github.com/user-attachments/assets/d1c66755-34c2-4b87-9824-18bb7a7c0b77" />
 <img width="1262" height="778" alt="Screenshot 2026-10-08 210918" src="https://github.com/user-attachments/assets/29048a10-5b89-4727-ad08-386ab52f83ca" />
 <img width="940" height="405" alt="Screenshot 2026-10-08 210948" src="https://github.com/user-attachments/assets/cf60b635-fabc-422c-99ad-be188ab5ea7e" />

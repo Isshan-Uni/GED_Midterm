@@ -20,14 +20,23 @@ One thing I couldn't finish was the visual feedback for the player's attack. In 
 
 # Gameplay Features: 
 Enemy AI: Enemies use **AI Move To** to chase the player. The player loses if an enemy collides with them.
+
 Player Attack: Uses a **Sphere Trace** to detect nearby enemies when attacking.
+
 Slow Enemy: Requires one hit to defeat and changes color to red.
+
 Fast Enemy: Moves faster and requires two hits. The first hit changes its color to orange, and the second changes it to red.
+
 Enemy Death: Defeated enemies have their gravity direction changed upward, making them fly into the air before being destroyed after a short delay. This was inspired by Bubble Bobble's enemy mechanics.
+
 Scoring: Each successful hit adds 10 points. Slow enemies give 10 points in total, while fast enemies give 20 points across two hits.
+
 High Score: Tracks the highest score achieved during the game session.
+
 Difficulty Scaling: At 40 points or higher, the Game Manager switches from slow enemy factories to fast enemy factories.
+
 Win/Lose Conditions: The player wins by reaching 200 points and loses if an enemy touches them.
+
 Win/Lose Menu: A separate level displays the result, final score, gameplay time, and high score.
 <br>
 <br>
@@ -50,8 +59,11 @@ I also used inheritance in my Factory system, where the slow and fast factories 
 # Polymorphism:
 I used polymorphism in both the enemy and factory systems.
 In **BP_EnemyBase**, I created a **DoEffect** event that is overridden by the child enemies. The player calls the same event through a **BP_EnemyBase** reference, but each child enemy performs a different action.
+
 Slow Enemy: Dies after one hit and changes color to red.
+
 Fast Enemy: Takes two hits, changes to orange on the first hit and red on the second, awarding more points overall.
+
 This demonstrates runtime polymorphism because the same event call produces different behavior depending on the enemy type.
 I also created a shared **ChangeColor** function using a Dynamic Material Instance. Both enemies use the same function but pass different color values.
 For the Factory system, the Game Manager accesses different child factories through their common parent type and calls **CreateEnemy**. Each factory has its own assigned enemy class, allowing different enemies to be spawned through the same function.
@@ -154,7 +166,7 @@ I originally wanted to recreate Bubble Bobble's projectile mechanics more closel
 My idea was to have the player shoot a bubble projectile that expands when it hits an enemy. The enemy would become attached to the bubble and float upward, and shooting the bubble again would destroy the enemy.
 I also wanted enemies to shoot projectiles at the player. For that, I was planning to use another Factory system to spawn different projectile types through the enemy base class.
 Due to the limited time during the midterm, I focused on completing the main gameplay and making sure the OOP, Singleton, and Factory implementations were functional.
-These are features I wanted to add if had more time.
+These are features I would have added if had more time.
 <br>
 <br>
 

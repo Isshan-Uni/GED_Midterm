@@ -7,10 +7,10 @@ The player attacks enemies to earn points, and defeated enemies fly upward befor
 <img width="1262" height="778" alt="Screenshot 2026-10-08 210918" src="https://github.com/user-attachments/assets/29048a10-5b89-4727-ad08-386ab52f83ca" />
 <img width="940" height="405" alt="Screenshot 2026-10-08 210948" src="https://github.com/user-attachments/assets/cf60b635-fabc-422c-99ad-be188ab5ea7e" />
 For the build you cannot see the attack area cause i did not have time, in the ue engine i am using the gizmo to show the attack area.
-
-
-
-Gameplay Features:
+\
+\
+\
+# Gameplay Features:
 Enemy AI: Enemies use AI Move To to chase the player. The player loses if an enemy collides with them.
 Player Attack: Uses a Sphere Trace to detect nearby enemies when attacking.
 Slow Enemy: Requires one hit to defeat and changes color to red.
@@ -22,11 +22,11 @@ Difficulty Scaling: At 40 points or higher, the Game Manager switches from slow 
 Win/Lose Conditions: The player wins by reaching 200 points and loses if an enemy touches them.
 Win/Lose Menu: A separate level displays the result, final score, gameplay time, and high score.
 
-Object-Oriented Programming (OOP):
+# Object-Oriented Programming (OOP):
 
 I used inheritance, polymorphism, and encapsulation to make the project more modular and avoid repeating the same logic across different Blueprints.
 
-Inheritance:
+# Inheritance:
 I created BP_EnemyBase as the parent class for both slow and fast enemies. It contains shared functionality such as AI movement, hit handling, color changes, and death effects.
 Both enemy types inherit this functionality but use different movement speeds and hit requirements. This avoids duplicating the same logic in multiple Blueprints.
 
@@ -35,7 +35,7 @@ I also used inheritance in my Factory system, where the slow and fast factories 
 <img width="242" height="134" alt="image" src="https://github.com/user-attachments/assets/a8f699d7-c134-4077-89e7-08855a5ed306" />
 
 
-Polymorphism:
+# Polymorphism:
 I used polymorphism in both the enemy and factory systems.
 In BP_EnemyBase, I created a DoEffect event that is overridden by the child enemies. The player calls the same event through a BP_EnemyBase reference, but each child enemy performs a different action.
 Slow Enemy: Dies after one hit and changes color to red.
@@ -59,7 +59,7 @@ EnemyBase having DoEffect event which is empty each enemy child do there own eff
 
 
 
-Encapsulation:
+# Encapsulation:
 I used encapsulation in BP_GI (Game Instance) to manage the player's score, gameplay time, high score, and win/lose state.
 Instead of accessing and modifying these values directly throughout the project, I created functions to control how other Blueprints interact with them.
 AddScore, GetScore, ResetScore – Manage the player's score.
@@ -76,7 +76,7 @@ I chose this approach to keep the data management in one place and make it easie
 
 
 
-Singleton Pattern – Game Instance
+# Singleton Pattern – Game Instance
 
 I implemented BP_GI, a custom Game Instance Blueprint, as a Singleton-style system for managing shared game data.
 It handles:
@@ -106,7 +106,7 @@ When the player meets the win condition, the Player Character calls SetBwon to u
 The result UI then retrieves this value to determine whether the player won or lost.
 
 
-Factory Pattern – Enemy Spawning
+# Factory Pattern – Enemy Spawning
 
 I implemented the Factory pattern using a parent BP_EnemyFactory and separate child factories for slow and fast enemies.
 The parent factory contains a CreateEnemy function that spawns an actor using an Enemy Class variable rather than hardcoding a specific enemy Blueprint.
@@ -127,7 +127,7 @@ We assign different value to the child factory and then it spawns that base enem
 <img width="960" height="391" alt="image" src="https://github.com/user-attachments/assets/625207e5-0231-461c-83fc-2058fec9c9fd" />
 Inside game manager it keeps spawning from the factory until we meet the score requirement.
 
-What I Wanted to Implement
+# What I Wanted to Implement
 I originally wanted to recreate Bubble Bobble's projectile mechanics more closely.
 My idea was to have the player shoot a bubble projectile that expands when it hits an enemy. The enemy would become attached to the bubble and float upward, and shooting the bubble again would destroy the enemy.
 I also wanted enemies to shoot projectiles at the player. For that, I was planning to use another Factory system to spawn different projectile types through the enemy base class.

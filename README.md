@@ -11,8 +11,9 @@ For the build you cannot see the attack area cause i did not have time, in the u
 <br>
 <br>
 <br>
-<br>
-# Gameplay Features:
+<br> 
+
+# Gameplay Features: 
 Enemy AI: Enemies use AI Move To to chase the player. The player loses if an enemy collides with them.
 Player Attack: Uses a Sphere Trace to detect nearby enemies when attacking.
 Slow Enemy: Requires one hit to defeat and changes color to red.
@@ -40,6 +41,7 @@ I also used inheritance in my Factory system, where the slow and fast factories 
 
 <br>
 <br>
+
 # Polymorphism:
 I used polymorphism in both the enemy and factory systems.
 In BP_EnemyBase, I created a DoEffect event that is overridden by the child enemies. The player calls the same event through a BP_EnemyBase reference, but each child enemy performs a different action.
@@ -114,6 +116,7 @@ The result UI then retrieves this value to determine whether the player won or l
 
 <br>
 <br>
+
 # Factory Pattern – Enemy Spawning
 
 I implemented the Factory pattern using a parent BP_EnemyFactory and separate child factories for slow and fast enemies.
@@ -136,6 +139,7 @@ We assign different value to the child factory and then it spawns that base enem
 Inside game manager it keeps spawning from the factory until we meet the score requirement.
 <br>
 <br>
+
 # What I Wanted to Implement
 I originally wanted to recreate Bubble Bobble's projectile mechanics more closely.
 My idea was to have the player shoot a bubble projectile that expands when it hits an enemy. The enemy would become attached to the bubble and float upward, and shooting the bubble again would destroy the enemy.

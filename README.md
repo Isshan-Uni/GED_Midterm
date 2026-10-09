@@ -9,7 +9,9 @@ The player attacks enemies to earn points, and defeated enemies fly upward befor
 <img width="1262" height="778" alt="Screenshot 2026-10-08 210918" src="https://github.com/user-attachments/assets/29048a10-5b89-4727-ad08-386ab52f83ca" />
 <img width="940" height="405" alt="Screenshot 2026-10-08 210948" src="https://github.com/user-attachments/assets/cf60b635-fabc-422c-99ad-be188ab5ea7e" />
 
-For the build you cannot see the attack area cause i did not have time, in the ue engine i am using the gizmo to show the attack area.
+I kept the scene simple because I wanted to focus more on implementing the gameplay and design patterns within the time limit. Instead of recreating Bubble Bobble's bubble projectile system, I used a Sphere Trace for the player's attack. When an enemy is defeated, it floats upward before being destroyed, which is inspired by the original game's mechanics. I also used different enemy colors to show when they get hit.
+
+One thing I couldn't finish was the visual feedback for the player's attack. In the Unreal Editor, I used a gizmo to see the attack area, but this isn't visible in the packaged build. With more time, I would have added a visual effect to make the attack range clearer to the player.
 <br>
 <br>
 <br>
@@ -65,8 +67,7 @@ This makes the system easier to expand without rewriting the attack or spawning 
 
 <img height="111" alt="image" src="https://github.com/user-attachments/assets/b5673bc5-87e1-475d-83a5-035a0b411207" />
 
-**EnemyBase** having **DoEffect** event which is empty each enemy child do there own effect like slow enemy dies on one hit fast enemy takes 2 and changes color twice and gives double score.
-
+The **DoEffect** event is defined in **BP_EnemyBase** and overridden by the child Blueprints. The slow enemy is defeated after one hit, while the fast enemy requires two hits, changes color after each hit, and awards twice as many points.
 <img width="940" height="358" alt="image" src="https://github.com/user-attachments/assets/bac5e4da-9a77-4e40-980d-4b4b23cef843" />
 
 
@@ -157,4 +158,4 @@ These are features I wanted to add if had more time.
 <br>
 <br>
 
-I used spawning system from my lab activity 1 which used to spawn powerups but now it spawns enemy. I used change color mechanics from old project from class activity 1.
+I reused the spawning system from Lab Activity 1, which originally spawned powerups, and modified it to spawn enemies instead. I also changed how the spawning works, so the function can now directly spawn enemies instead of using the previous method. I also reused the color-changing mechanic from Class Activity 1 submission.

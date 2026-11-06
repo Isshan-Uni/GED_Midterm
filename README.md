@@ -12,7 +12,7 @@ I also used inheritance in my Factory system, where the apple and banana factori
 <img width="195" height="50" alt="image" src="https://github.com/user-attachments/assets/42728714-40bd-4c46-8f5f-d4af7a53e50a" />
 
 
-I used polymorphism in both the fruit and factory systems. In BP_FruitBase, I created a DoEffect event that is overridden by the child enemies. Each child enemy performs a different action.
+I used polymorphism in both the fruit and factory systems. In BP_FruitBase, I created a DoEffect event that is overridden by the child enemies. Each child fruit performs a different action.
 Fruit: Adds 20 score
 Banana: Adds 10 score
 
@@ -43,8 +43,8 @@ It is being used in multiple place like in player to check if we reached the win
 <img width="367" height="214" alt="image" src="https://github.com/user-attachments/assets/503ba976-7877-457a-8cd5-8b44e1b7d0b5" />
 
 Factory Pattern – Fruit Spawning
-I implemented the Factory pattern using a parent BP_FruitFactory and separate child factories for slow and fast enemies. The parent factory contains a CreateEnemy function that spawns an actor using an fruit Class variable rather than hardcoding a specific enemy Blueprint. Each child factory assigns a different fruit class to this variable, allowing the same spawning function to create different enemy types.
-Game Manager and Spawning Logic I created a separate Game Manager to control when fruits spawn and which factories should be used. On BeginPlay, a looping timer starts and calls SpawnEnemy every 3 seconds. The Game Manager stores references different fruit factories in same arrays. While the score is below 40, it loops through the slow enemy factories and calls CreateEnemy. Every time it randomly chooses a factory and that factory spawns its assigned fruit. This makes the system more flexible. If I wanted to add another enemy type later, I could create another child factory and assign its fruit class without having to rewrite the existing spawning function.
+I implemented the Factory pattern using a parent BP_FruitFactory and separate child factories for slow and fast enemies. The parent factory contains a CreateEnemy function that spawns an actor using an fruit Class variable rather than hardcoding a specific fruit Blueprint. Each child factory assigns a different fruit class to this variable, allowing the same spawning function to create different fruit types.
+Game Manager and Spawning Logic I created a separate Game Manager to control when fruits spawn and which factories should be used. On BeginPlay, a looping timer starts and calls SpawnEnemy every 3 seconds. The Game Manager stores references different fruit factories in same arrays. And it choese a random factory and calls it every time and the factory spawns the fruit with a random location near the factory. If I wanted to add another fruit type later, I could create another child factory and assign its fruit class without having to rewrite the existing spawning function.
 
 <img width="364" height="199" alt="image" src="https://github.com/user-attachments/assets/019f3451-94cd-4173-be94-d23630a9ea04" />
 
